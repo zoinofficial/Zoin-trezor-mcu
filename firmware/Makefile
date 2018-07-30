@@ -131,6 +131,16 @@ clean::
 	rm -f $(1).h $(3)
 endef
 
-$(eval $(call GENERATE_CODE,coin_info,defs,coin_info.c))
-$(eval $(call GENERATE_CODE,nem_mosaics,defs/nem/nem_mosaics.json,nem_mosaics.c))
 $(eval $(call GENERATE_CODE,bl_data,../bootloader/bootloader.bin))
+
+define MAKO
+# $(1) - Mako result file
+$(1): $(1).mako defs
+	@printf "  MAKO  $(1)\n"
+	$(Q)$(PYTHON) ../vendor/trezor-common/tools/coin_gen.py render $(1).mako
+
+clean::
+	rm -f $(1)
+endef
+
+$(eval $(foreach tmpl,$(wildcard *.mako),$(call MAKO,$(basename $(tmpl)))))
