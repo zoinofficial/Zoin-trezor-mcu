@@ -17,7 +17,7 @@ ATTRIBUTES = (
 #include "nem_mosaics.h"
 
 const NEMSignTx_NEMMosaicCreation_NEMMosaicDefinition NEM_MOSAIC_DEFINITIONS[NEM_MOSAIC_DEFINITIONS_COUNT] = {
-% for m in nem:
+% for m in supported_on("trezor1", nem):
 {
 	% for attr, func in ATTRIBUTES:
 		% if attr in m:

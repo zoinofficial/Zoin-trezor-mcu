@@ -6,10 +6,11 @@
 
 #include <stdint.h>
 
-#define TOKENS_COUNT ${len(erc20)}
+<% erc20_list = list(supported_on("trezor1", erc20)) %>\
+#define TOKENS_COUNT ${len(erc20_list)}
 
 typedef struct {
-    uint8_t chain_id;
+    uint32_t chain_id;
     const char * const address;
     const char * const ticker;
     int decimals;
@@ -19,6 +20,6 @@ extern const TokenType tokens[TOKENS_COUNT];
 
 extern const TokenType *UnknownToken;
 
-const TokenType *tokenByChainAddress(uint8_t chain_id, const uint8_t *address);
+const TokenType *tokenByChainAddress(uint32_t chain_id, const uint8_t *address);
 
 #endif

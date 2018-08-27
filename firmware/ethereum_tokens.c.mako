@@ -5,14 +5,14 @@
 #include "ethereum_tokens.h"
 
 const TokenType tokens[TOKENS_COUNT] = {
-% for t in erc20:
+% for t in supported_on("trezor1", erc20):
 	{${"{:>2}".format(t.chain_id)}, ${c_str(t.address_bytes)}, " ${ascii(t.symbol)}", ${t.decimals}}, // ${t.chain} / ${t.name}
 % endfor
 };
 
 const TokenType *UnknownToken = (const TokenType *)1;
 
-const TokenType *tokenByChainAddress(uint8_t chain_id, const uint8_t *address)
+const TokenType *tokenByChainAddress(uint32_t chain_id, const uint8_t *address)
 {
 	if (!address) return 0;
 	for (int i = 0; i < TOKENS_COUNT; i++) {

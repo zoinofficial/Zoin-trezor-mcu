@@ -1,7 +1,7 @@
 <%
 BKSL = "\\"
 
-networks = list(sorted(eth, key=lambda n: n.chain_id))
+networks = list(supported_on("trezor1", eth))
 max_chain_id_length = 0
 max_suffix_length = 0
 for n in networks:

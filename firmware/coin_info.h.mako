@@ -6,7 +6,7 @@
 
 #include "coins.h"
 
-<% coins_list = list(supported_on("trezor1", coins)) %>\
+<% coins_list = list(supported_on("trezor1", bitcoin)) %>\
 #define COINS_COUNT (${len(coins_list)})
 
 extern const CoinInfo coins[COINS_COUNT];

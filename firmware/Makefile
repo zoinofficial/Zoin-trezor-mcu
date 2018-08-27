@@ -137,7 +137,7 @@ define MAKO
 # $(1) - Mako result file
 $(1): $(1).mako defs
 	@printf "  MAKO  $(1)\n"
-	$(Q)$(PYTHON) ../vendor/trezor-common/tools/coin_gen.py render $(1).mako
+	$(Q)$(PYTHON) ../vendor/trezor-common/tools/cointool.py render $(1).mako
 
 clean::
 	rm -f $(1)
