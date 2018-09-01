@@ -1,6 +1,6 @@
 # Zoin implementation of TREZOR One Bootloader and Firmware
 
-[![Build Status](https://travis-ci.org/zoinofficial/Zoin-trezor-mcu.svg?branch=master)](https://travis-ci.org/trezor/trezor-mcu) [![gitter](https://badges.gitter.im/trezor/community.svg)](https://gitter.im/trezor/community)
+[![Build Status](https://travis-ci.org/zoinofficial/Zoin-trezor-mcu.svg?branch=master)](https://travis-ci.org/zoinofficial/Zoin-trezor-mcu) [![gitter](https://badges.gitter.im/trezor/community.svg)](https://gitter.im/trezor/community)
 
 Trezor implementation will be released within 2 weeks after new wallet release.
 
